@@ -14,8 +14,6 @@ export class YoutubeService {
 
   constructor(private http: HttpClient) {}
 
-  // playlistItems?part=snippet&key=AIzaSyCparuGObDfIp3cjUYQe5zNlqRCHFrZGJ0&playlistId=UUuaPTYj15JSkETGnEseaFFg&maxResults=3
-
   getVideos() {
     const url = `${this.youtubeURL}/playlistItems`;
 
@@ -23,7 +21,8 @@ export class YoutubeService {
       .set("part", "snippet")
       .set("key", this.apiKey)
       .set("playlistId", this.playlist)
-      .set("maxResults", "10");
+      .set("maxResults", "20")
+      .set("pageToken", this.nextPageToken)
 
     return this.http
       .get<YouTubeResponse>(url, { params })
