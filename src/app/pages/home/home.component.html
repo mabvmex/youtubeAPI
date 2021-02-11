@@ -11,7 +11,7 @@
             <h5 class="card-title">{{video.title}}</h5>
             <p class="card-text"> <strong> Autor: </strong> {{video.channelTitle}} </p>
             <p class="card-text"> <strong> Publicado: </strong> {{video.publishedAt | date }} </p>
-            <button class="btn btn-outline-primary btn-block"> Ver video </button>
+            <button class="btn btn-outline-primary btn-block" (click)='mostrarVideo(video)'> Ver video </button>
 
         </div>
 
@@ -20,5 +20,5 @@
 
 <div class="row mt-5 mb-5 text-center">
     <div class="col">
-        <button class="btn btn-primary btn-lg" > Cargar más videos </button>
+        <button class="btn btn-primary btn-lg"> Cargar más videos </button>
     </div>
